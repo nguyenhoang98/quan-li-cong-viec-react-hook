@@ -1,50 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
-import BoxColor from "./Components/BoxColor/BoxColor";
-import TodoForm from "./Components/TodoForm/TodoForm";
-import TodoList from "./Components/TodoList/TodoList";
+import Pagination from "./Components/Pagination/Pagination";
+import PostList from "./Components/PostList/PostList";
+import qs from "query-string";
+import FilterList from "./Components/FilterList/FilterList";
+import Clock from "./Components/Clock/Clock";
 function App(props) {
-  const [todoList, settodoList] = useState(() => {
-    return localStorage.getItem("todos")
-      ? JSON.parse(localStorage.getItem("todos"))
-      : [
-          {
-            id: 1,
-            title: "Học React",
-          },
-          {
-            id: 2,
-            title: "Học Angular",
-          },
-          {
-            id: 3,
-            title: "Học Vue",
-          },
-        ];
+  const [list, setList] = useState([]);
+  const [pagination, setPagination] = useState({
+    _page: 1,
+    _limit: 10,
+    _totalRows: 50,
   });
-  function onRemoveList(index) {
-    const newTodos = [...todoList];
-    newTodos.splice(index, 1);
-    settodoList(newTodos);
-    localStorage.setItem("todos", JSON.stringify(newTodos));
+  const [filter, setFilter] = useState({
+    _page: 1,
+  });
+  useEffect(() => {
+    async function fetchApiList() {
+      const queryString = qs.stringify(filter);
+      const url = `http://js-post-api.herokuapp.com/api/posts?_limit=10&${queryString}`;
+      const response = await fetch(url);
+      const responseJSON = await response.json();
+      const { data, pagination } = responseJSON;
+      setPagination(pagination);
+      setList(data);
+    }
+    fetchApiList();
+  }, [filter]);
+  function handlePageChange(newPage) {
+    setFilter({
+      ...filter,
+      _page: newPage,
+    });
   }
-  function onchangeValue(value) {
-    const data = {
-      id: todoList.length,
-      title: value,
-    };
-    const newTodos = [...todoList];
-    newTodos.push(data);
-    settodoList(newTodos);
-    localStorage.setItem("todos", JSON.stringify(newTodos));
+  function handleFilterList(value) {
+    console.log(value);
+    setFilter({
+      ...filter,
+      _page: 1,
+      q: value,
+    });
   }
   return (
     <div className="app">
-      <BoxColor />
-      <TodoForm onchangeValue={onchangeValue} />
-      <TodoList todoList={todoList} onRemoveList={onRemoveList} />
+      <Clock />
+      <FilterList handleFilterList={handleFilterList} />
+      <PostList list={list} />
+      <Pagination pagination={pagination} handlePageChange={handlePageChange} />
     </div>
   );
 }
-
 export default App;
