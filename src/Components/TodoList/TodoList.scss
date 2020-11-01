@@ -1,0 +1,17 @@
+
+.todolist__table{
+  width:60% ;
+  height: auto;
+  margin:auto ;
+}
+.todolist__table tr:nth-child(even){
+  background: rgb(231, 231, 231);
+}
+.todolist__table tr:nth-child(odd){
+  background: rgb(170, 169, 169);
+}
+.todolist__table td ,
+.todolist__table th{
+  text-align:center ;
+  padding:10px ;
+}

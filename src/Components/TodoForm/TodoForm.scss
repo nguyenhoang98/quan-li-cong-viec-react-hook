@@ -1,0 +1,50 @@
+
+.todoform{
+  width:300px ;
+  height: auto;
+  background: white;
+  box-shadow: 1px 1px 1px #ccc , -1px -1px 1px #ccc ;
+  padding:10px ;
+  position: fixed;
+  right:40px ;
+  bottom:40px ;
+  z-index:99 ;
+  &__title{
+     padding:20px 0px ;
+     font-size: 18px;
+     font-weight: bold;
+  }
+  &__close{
+     position: absolute;
+     top:10px ;
+     right:10px ;
+     font-size: 30px;
+     cursor: pointer;
+  }
+}
+.group-form{
+  width:100% ;
+  height: auto;
+  margin:10px 0px;
+  &__label{
+    display: block;
+  }
+  &__input{
+    width:100% ;
+    height: auto;
+    padding:6px ;
+  }
+  &__select{
+    width:100% ;
+    height: auto;
+    padding:6px ;
+  }
+}
+.btn-save{
+  background: blue;
+  margin-right:10px ;
+}
+.btn-reset{
+  background: red;
+}
+

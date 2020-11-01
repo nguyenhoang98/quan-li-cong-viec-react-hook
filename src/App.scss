@@ -1,7 +1,18 @@
 *{
   box-sizing: border-box;
 }
-.app{
-  color:orange ;
-  padding:10px ;
+
+.btn{
+  border:none ;
+  outline: none;
+  padding:10px 16px ;
+  color:white ;
+  cursor: pointer;
+}
+.btn-toggle{
+  position: fixed;
+  right:40px ;
+  bottom: 40px;
+  background: blue;
+  width:250px ;
 }
