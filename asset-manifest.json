@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/quan-li-cong-viec-react-hook/static/css/main.a8b899e2.chunk.css",
+    "main.js": "/quan-li-cong-viec-react-hook/static/js/main.d84a753f.chunk.js",
+    "main.js.map": "/quan-li-cong-viec-react-hook/static/js/main.d84a753f.chunk.js.map",
+    "runtime-main.js": "/quan-li-cong-viec-react-hook/static/js/runtime-main.231b1b85.js",
+    "runtime-main.js.map": "/quan-li-cong-viec-react-hook/static/js/runtime-main.231b1b85.js.map",
+    "static/js/2.b25a889a.chunk.js": "/quan-li-cong-viec-react-hook/static/js/2.b25a889a.chunk.js",
+    "static/js/2.b25a889a.chunk.js.map": "/quan-li-cong-viec-react-hook/static/js/2.b25a889a.chunk.js.map",
+    "index.html": "/quan-li-cong-viec-react-hook/index.html",
+    "precache-manifest.9a4c7e5914a2119bf05d482439409ee2.js": "/quan-li-cong-viec-react-hook/precache-manifest.9a4c7e5914a2119bf05d482439409ee2.js",
+    "service-worker.js": "/quan-li-cong-viec-react-hook/service-worker.js",
+    "static/css/main.a8b899e2.chunk.css.map": "/quan-li-cong-viec-react-hook/static/css/main.a8b899e2.chunk.css.map",
+    "static/js/2.b25a889a.chunk.js.LICENSE.txt": "/quan-li-cong-viec-react-hook/static/js/2.b25a889a.chunk.js.LICENSE.txt",
+    "static/media/loading_2.gif": "/quan-li-cong-viec-react-hook/static/media/loading_2.73abf012.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.231b1b85.js",
+    "static/js/2.b25a889a.chunk.js",
+    "static/css/main.a8b899e2.chunk.css",
+    "static/js/main.d84a753f.chunk.js"
+  ]
+}
